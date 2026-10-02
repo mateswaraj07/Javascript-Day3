@@ -1,0 +1,50 @@
+body {
+  background-color: black;
+  font-family: Arial;
+}
+
+.calculator {
+  width: 300px;
+  margin: 30px auto;
+}
+
+.calculation {
+  color: white;
+  font-size: 40px;
+  text-align: right;
+  min-height: 50px;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.number-button,
+.operator-button,
+.clear-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.number-button {
+  background-color: rgb(50, 50, 50);
+  color: white;
+}
+
+.operator-button {
+  background-color: orange;
+  color: white;
+}
+
+.clear-button {
+  background-color: rgb(50, 50, 50);
+  color: white;
+  font-size: 14px;
+}

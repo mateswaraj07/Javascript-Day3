@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10h - Shipping Calculator</title>
+
+    <style>
+      .cost-input {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .calculate-button {
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .error-message {
+        color: rgb(200, 0, 0);
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <input class="cost-input" placeholder="Cost of order">
+
+    <button class="calculate-button" onclick="
+      calculateTotal();
+    ">
+      Calculate
+    </button>
+
+    <p class="error-message"></p>
+
+    <p class="total"></p>
+
+    <script>
+      function calculateTotal() {
+        const input = document.querySelector('.cost-input');
+        const errorMessage = document.querySelector('.error-message');
+        const total = document.querySelector('.total');
+
+        let cost = Number(input.value);
+
+        errorMessage.innerHTML = '';
+        total.innerHTML = '';
+
+        if (cost < 0) {
+          errorMessage.innerHTML =
+            'Error: cost cannot be less than $0';
+          return;
+        }
+
+        if (cost < 40) {
+          cost += 10;
+        }
+
+        total.innerHTML = `$${cost.toFixed(2)}`;
+      }
+    </script>
+
+  </body>
+</html>
